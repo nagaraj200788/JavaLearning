@@ -1,2 +1,2 @@
-# JavaLearning
-SpringBoot+Java8
+# spring-boot
+List of Spring Boot Tutorials
