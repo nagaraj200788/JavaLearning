@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <mirrors>
+        <mirror>
+            <id>fmw-virtual</id>
+            <url>http://artifactory-slc.oraclecorp.com/artifactory/repo/</url>
+            <mirrorOf>external:*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <url>http://artifactory-slc.oraclecorp.com/artifactory/fmw-virtual/</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>snapshots</id>
+                    <url>http://artifactory-slc.oraclecorp.com/artifactory/fmw-virtual/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <url>http://artifactory-slc.oraclecorp.com/artifactory/fmw-virtual/</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>snapshots</id>
+                    <url>http://artifactory-slc.oraclecorp.com/artifactory/fmw-virtual/</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>fmw-artifactory-profile</id>
+        </profile>
+		<profile>
+			<id>empty-profile</id>
+		</profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>fmw-artifactory-profile</activeProfile>
+		<activeProfile>empty-profile</activeProfile>
+    </activeProfiles>
+
+    <proxies>
+        <proxy>
+            <active>true</active>
+            <id>oracle</id>
+            <protocol>http</protocol>
+            <host>www-proxy.us.oracle.com</host>
+            <port>80</port>
+            <nonProxyHosts>*.oracle.com|*.oraclecorp.com|localhost|127.0.0.1</nonProxyHosts>
+        </proxy>
+    </proxies>
+</settings>
